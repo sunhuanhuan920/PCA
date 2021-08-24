@@ -50,4 +50,5 @@ class PCA():
         # center the data
         X = X - self.mean
 
+        # project original data onto principal components
         return X.dot(self.components.T)
