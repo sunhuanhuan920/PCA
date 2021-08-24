@@ -1,3 +1,9 @@
+"""
+    Test bemch for PCA class
+    Compare my implementation of PCA class with sklearn's implementation
+    Arthor: Zhenhuan(Steven) Sun
+"""
+
 from PCA import PCA as myPCA
 from sklearn.datasets import load_iris
 from sklearn.decomposition import PCA
@@ -10,6 +16,7 @@ X = iris.data
 y = iris.target
 
 # normalization (0 mean and unit variance)
+# normalize data before performing PCA will make PCA works better
 X_norm = StandardScaler().fit_transform(X)
 
 # Using scikit-learn's PCA implementation

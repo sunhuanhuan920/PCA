@@ -64,15 +64,14 @@ class PCA():
             self.unitary_matrix = u
             self.explained_variance = eigenvalues[:self.n_components]
             self.explained_variance_ratio = (eigenvalues / eigenvalues.sum())[:self.n_components]
-            self.components = v
+            self.components = v[:self.n_components, :]
 
         return self
 
     def transform(self, X):
-        # center the data
-        X = X - self.mean
-
         if self.method == "eigen_decomposition":
+            # center the data
+            X = X - self.mean
             # project original data onto principal components that maximize variance
             return X.dot(self.components.T)
         elif self.method == "SVD":
