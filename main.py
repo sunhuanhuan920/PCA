@@ -4,7 +4,7 @@
     Arthor: Zhenhuan(Steven) Sun
 """
 
-from PCA import PCA as myPCA
+from pca import PCA as myPCA
 from sklearn.datasets import load_iris
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
