@@ -7,7 +7,7 @@
 
 import numpy as np
 
-class PCA():
+class PCA:
     def __init__(self, n_components, method="eigen_decomposition"):
         # how many principal components user want to use
         self.n_components = n_components
